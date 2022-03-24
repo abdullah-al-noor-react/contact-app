@@ -9,25 +9,34 @@ export const ContactReducer = (state,action) => {
     const {type,payload} = action
     switch (type) {
         case GET_CONTACT:
-                let singleContact = state.find(item => {
+                let singleContact = state.contacts.find(item => {
                 return item.id == payload
               })
             //   console.log(payload);
               console.log('in',singleContact);
-              return singleContact;
+              return {
+                  ...state,
+                  contact:singleContact,
+              };
         case STORE_CONTACT:
             let newContact = {
                 ...payload,
                 id:uuidv4()
             }
-            return[newContact,...state];
+            return {
+                ...state,
+                contacts:[newContact,...state.contacts]
+            };
         case UPDATE_CONTACT:
-            let editConatact = state.map((contact) => {
+            let editConatact = state.contacts.map((contact) => {
                 return contact.id === contactItem.id ? contact = contactItem : contact;
               }
               );
            
-              return[...editConatact]  
+              return{
+                  ...state,
+                  contacts:[...editConatact]
+              }  
         default:
             return state
     }

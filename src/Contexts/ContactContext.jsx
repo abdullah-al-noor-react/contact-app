@@ -4,7 +4,9 @@ import { ContactReducer } from '../Reducers/ContactReducer'
 import { GET_CONTACT,GET_CONTACTS,STORE_CONTACT,UPDATE_CONTACT } 
 from '../Actions/ContactAction'
 
-const initialState = [
+const initialState ={
+  contact:{},
+  contacts: [
     {
       id:"444fd",
       first_name:"Mr Juli",
@@ -36,6 +38,7 @@ const initialState = [
       gender:"Male"
     }
   ]
+}
 
 
 export const ContactContext = createContext()
@@ -50,6 +53,11 @@ export const ContactProvider = ({children}) => {
 
     const findContact = (id) => {
       dispatch({type:GET_CONTACT,payload:id})
+      // console.log(contacts);
+      
+    }
+    const getContact = ()=>{
+      return contacts.contact
     }
 
     const contactStore = (contactItem) => {
@@ -62,6 +70,7 @@ export const ContactProvider = ({children}) => {
 
     const value= {
       contacts,
+      getContact,
       findContact,
       contactStore,
       contactUpdate

@@ -6,7 +6,7 @@ import Contact from './Contact'
 
 function Contacts() {
 
-  const {contacts} = useContext(ContactContext)
+  const {contacts:{contacts}} = useContext(ContactContext)
   return (
     <Row>
         {contacts.map((contactItem,index)=> {

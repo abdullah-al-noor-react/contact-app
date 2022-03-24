@@ -7,28 +7,40 @@ import { ContactContext } from "../Contexts/ContactContext";
 function ContactDetail() {
   let {id : contactId} = useParams();
   const [loading,setLoading] = useState(true)
-  const [contactDetails,setcContactDetails] = useState()
+  const [contactDetails,setcContactDetails] = useState(false)
 
   
-  const {findContact} = useContext(ContactContext)
+  const {findContact,contact,getContact} = useContext(ContactContext)
 
   useEffect(() => {
-   let contactD =  findContact(contactId)
-  //  console.log(contactDetail);
-   if(contactD){
-      // console.log(contactD);
-    
-     setcContactDetails(contactD)
-     setLoading(false)
-   }
+   
+      findContact(contactId)
+      setTimeout(() => {
+        setcContactDetails(getContact)
+        setLoading(false)
+       }, 2000);
+
   
   },[contactId])
+
+  // useEffect(() => {
+  //   setLoading(false)
+  //  },[contactDetails])
+   
+  //  setTimeout(() => {
+  //   setcContactDetails(getContact)
+  //   setLoading(false)
+  //  }, 2000);
+
   
   return (
 
     <>
       {loading ?  <PageLoader/> :  <Card>
-        <Card.Header>Contact Details</Card.Header>
+        <Card.Header>Contact Details
+    {}
+
+        </Card.Header>
         <Row>
           <Col sm={12} md={6}>
             <Image className="fluid" src={contactDetails.picture} />
