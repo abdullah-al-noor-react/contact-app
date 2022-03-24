@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Row ,Col} from 'react-bootstrap'
+import { ContactContext } from '../Contexts/ContactContext'
 import Contact from './Contact'
 
-function Contacts({contacts}) {
+
+function Contacts() {
+
+  const {contacts} = useContext(ContactContext)
   return (
     <Row>
         {contacts.map((contactItem,index)=> {

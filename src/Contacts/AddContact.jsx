@@ -1,10 +1,12 @@
-import {useState} from 'react'
+import {useContext, useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import { toast } from 'react-toastify';
 import {Form,Button} from 'react-bootstrap'
+import { ContactContext } from '../Contexts/ContactContext';
 
-function AddContact({contactStore}) {
+function AddContact() {
 
+    const {contactStore} = useContext(ContactContext)
     let navigate = useNavigate();
 
 

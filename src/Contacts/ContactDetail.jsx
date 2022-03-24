@@ -1,20 +1,25 @@
-import { useEffect,useState } from "react";
+import { useContext, useEffect,useState } from "react";
 import {  useParams } from "react-router-dom";
 import {Card,Button, Row, Col, Image,ListGroup} from 'react-bootstrap'
 import PageLoader from "../Components/PageLoader";
+import { ContactContext } from "../Contexts/ContactContext";
 
-function ContactDetail({findContact}) {
+function ContactDetail() {
   let {id : contactId} = useParams();
   const [loading,setLoading] = useState(true)
   const [contactDetails,setcContactDetails] = useState()
 
+  
+  const {findContact} = useContext(ContactContext)
+
   useEffect(() => {
-   let contactDetails =  findContact(contactId)
-   if(contactDetails){
+   let contactD =  findContact(contactId)
+  //  console.log(contactDetail);
+   if(contactD){
+      // console.log(contactD);
     
-     setcContactDetails(contactDetails)
+     setcContactDetails(contactD)
      setLoading(false)
-    //  console.log(contactDetails);
    }
   
   },[contactId])
