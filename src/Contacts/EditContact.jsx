@@ -19,7 +19,7 @@ function EditContact({findContact,contactUpdate}) {
         phone:"",
         dob:'',
         picture:"",
-        gender:"male"
+        gender:""
     }
     const [contact,setContact] = useState(contactObject)
     const [loading,setLoading] = useState(true)
@@ -98,8 +98,8 @@ const  {first_name,last_name,email,phone,dob,picture,gender} = contact
             </Form.Group>
                 <Form.Select className="mb-3" onChange={handleChange}  name="gender">
                     <option>  Select Gender</option>
-                    <option value="male"  >Male</option>
-                    <option value="female" >Female</option>
+                    <option value="male"  selected={gender === 'male' ? 'selected' : ''}  >Male</option>
+                    <option value="female"  selected={gender === 'female' ? 'selected' : ''}   >Female</option>
                 </Form.Select>
 
         <Button variant="primary" type="submit">

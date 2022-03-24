@@ -33,13 +33,13 @@ function App() {
   const initialState = [
     {
       id:'dsfasdf1',
-      first_name:"Mr Juli",
+      first_name:"Mrs Juli",
       last_name:"Patison",
       email:"juli@gmail.com",
       phone:"+88-222-333-444",
       dob:"1990-05-25",
       picture:'https://randomuser.me/api/portraits/women/6.jpg',
-      gender:"Female"
+      gender:"female"
     },
     {
       id:'ds2sdfsd',
@@ -49,7 +49,7 @@ function App() {
       phone:"+88-555-333-1111",
       dob:"1985-02-01",
       picture:'https://randomuser.me/api/portraits/men/5.jpg',
-      gender:"Male"
+      gender:"male"
     },
     {
       id:"3dasf",
@@ -59,7 +59,7 @@ function App() {
       phone:"+88-777-999-1111",
       dob:"1985-10-15",
       picture:'https://randomuser.me/api/portraits/men/6.jpg',
-      gender:"Male"
+      gender:"male"
     }
   ]
 
