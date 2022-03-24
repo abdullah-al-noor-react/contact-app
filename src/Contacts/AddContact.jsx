@@ -1,8 +1,14 @@
 import {useState} from 'react'
-
+import {useNavigate} from 'react-router-dom'
+import { toast } from 'react-toastify';
 import {Form,Button} from 'react-bootstrap'
 
-function AddContact() {
+function AddContact({contactStore}) {
+
+    let navigate = useNavigate();
+
+
+
     const contactObject = {
         first_name:"",
         last_name:"",
@@ -22,12 +28,24 @@ const handleChange = (e)=>{
         }
     })
 }
+
+const handleSubmit = (e)=> {
+    e.preventDefault()
+    // console.log(contact);
+    contactStore(contact)
+    setContact(contactObject)
+    toast.success("Contact is Added successfully...");
+    navigate('/contact')
+
+
+    
+}
   
 
 const  {first_name,last_name,email,phone,dob,picture,gender} = contact
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit} >
             <Form.Group className="mb-3" >
                 <Form.Label>First Name </Form.Label>
                 <Form.Control type="text" placeholder="Enter First Name"

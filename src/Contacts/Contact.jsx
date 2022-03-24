@@ -35,6 +35,7 @@ const Contact = ({contactItem: {  id,
             </ListGroup>
             <Card.Body>
                 <Card.Link as={Link} to={`/contact/details/${id}`}>View Details</Card.Link>
+                <Card.Link as={Link} to={`/contact/${id}/edit`}>Edit Profile</Card.Link>
                 {/* <Card.Link href="#">Another Link</Card.Link> */}
             </Card.Body>
             </Card>

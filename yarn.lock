@@ -685,6 +685,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"clsx@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "clsx@npm:1.1.1"
+  checksum: d8ae10ac0546da19fe8c9516886f6582a64a382cf4d09ea7d36d5287cafbdab1192ab249adc2cdf0310e0b0aeac4f4142cf7c738c98d9cb68c19ba24b6f673d5
+  languageName: node
+  linkType: hard
+
 "color-convert@npm:^1.9.0":
   version: 1.9.3
   resolution: "color-convert@npm:1.9.3"
@@ -734,6 +741,7 @@ __metadata:
     react-bootstrap: ^2.2.1
     react-dom: ^17.0.2
     react-router-dom: 6
+    react-toastify: ^8.2.0
     uuid: ^8.3.2
     vite: ^2.8.0
   languageName: unknown
@@ -1751,6 +1759,18 @@ fsevents@~2.3.2:
   peerDependencies:
     react: ">=16.8"
   checksum: 08de320e8850ac37fda04ccbf0d55672b254866c049e775a54f2679a9e6294e0fa48bec5e00ea27fe9ea5e29af8edf65d330ffd3f789a333295d7be4ac2eeb57
+  languageName: node
+  linkType: hard
+
+"react-toastify@npm:^8.2.0":
+  version: 8.2.0
+  resolution: "react-toastify@npm:8.2.0"
+  dependencies:
+    clsx: ^1.1.1
+  peerDependencies:
+    react: ">=16"
+    react-dom: ">=16"
+  checksum: a2a206df46b4361ec955d00fabf10e4de854685aa220bb3425ecf38a25d87466cc8c68494acc1e3582ac4ac00637185b469daa7793a7be2ffbd7dadb113d8316
   languageName: node
   linkType: hard
 
