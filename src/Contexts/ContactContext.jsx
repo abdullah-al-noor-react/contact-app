@@ -15,7 +15,7 @@ const initialState ={
       phone:"+88-222-333-444",
       dob:"1990-05-25",
       picture:'https://randomuser.me/api/portraits/women/6.jpg',
-      gender:"Female"
+      gender:"female"
     },
     {
       id:'2dsfsf',
@@ -25,7 +25,7 @@ const initialState ={
       phone:"+88-555-333-1111",
       dob:"1985-02-01",
       picture:'https://randomuser.me/api/portraits/men/5.jpg',
-      gender:"Male"
+      gender:"male"
     },
     {
       id:'3dsfsd',
@@ -35,7 +35,7 @@ const initialState ={
       phone:"+88-777-999-1111",
       dob:"1985-10-15",
       picture:'https://randomuser.me/api/portraits/men/6.jpg',
-      gender:"Male"
+      gender:"male"
     }
   ]
 }

@@ -1,13 +1,16 @@
-import {useState,useEffect} from 'react'
+import {useState,useEffect, useContext} from 'react'
 import {useNavigate,useParams} from 'react-router-dom'
 import { toast } from 'react-toastify';
 import {Form,Button} from 'react-bootstrap'
 
 import PageLoader from '../Components/PageLoader'
+import { ContactContext } from '../Contexts/ContactContext';
 
-function EditContact({findContact,contactUpdate}) {
+function EditContact() {
 
     let navigate = useNavigate();
+
+    const {findContact,getContact,contactUpdate} = useContext(ContactContext)
 
 
 
@@ -19,7 +22,7 @@ function EditContact({findContact,contactUpdate}) {
         phone:"",
         dob:'',
         picture:"",
-        gender:""
+        gender:"male"
     }
     const [contact,setContact] = useState(contactObject)
     const [loading,setLoading] = useState(true)
@@ -27,12 +30,16 @@ function EditContact({findContact,contactUpdate}) {
     let {id:contactId} = useParams();
 
     useEffect(() => {
-     const contactItem =  findContact(contactId)
-     if(contactItem){
-       setContact(contactItem)
-       setLoading(false)
-     }
+       findContact(contactId)
+    
     },[contactId])
+
+    useEffect(() => {
+        if(getContact){
+            setContact(getContact)
+        setLoading(false)
+        }
+     },[getContact])
 
 const handleChange = (e)=>{
     setContact(prevState => {
@@ -46,6 +53,8 @@ const handleChange = (e)=>{
 const handleSubmit = (e)=> {
     e.preventDefault()
     // console.log(contact);
+
+    // return
    
     contactUpdate(contact)
     // return
@@ -96,10 +105,10 @@ const  {first_name,last_name,email,phone,dob,picture,gender} = contact
                 <Form.Control type="tex" placeholder="Enter Picture"
                 name="picture" value={picture} onChange={handleChange} />
             </Form.Group>
-                <Form.Select className="mb-3" onChange={handleChange}  name="gender">
+                <Form.Select className="mb-3" name="gender" onChange={handleChange} value={gender}  >
                     <option>  Select Gender</option>
-                    <option value="male"  selected={gender === 'male' ? 'selected' : ''}  >Male</option>
-                    <option value="female"  selected={gender === 'female' ? 'selected' : ''}   >Female</option>
+                    <option value="male" >Male</option>
+                    <option value="female"  >Female</option>
                 </Form.Select>
 
         <Button variant="primary" type="submit">

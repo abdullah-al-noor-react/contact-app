@@ -13,7 +13,7 @@ export const ContactReducer = (state,action) => {
                 return item.id == payload
               })
             //   console.log(payload);
-              console.log('in',singleContact);
+            //   console.log('in',singleContact);
               return {
                   ...state,
                   contact:singleContact,
@@ -28,10 +28,13 @@ export const ContactReducer = (state,action) => {
                 contacts:[newContact,...state.contacts]
             };
         case UPDATE_CONTACT:
+            // console.log('update contact 1');
             let editConatact = state.contacts.map((contact) => {
-                return contact.id === contactItem.id ? contact = contactItem : contact;
+                return contact.id === payload.id ? contact = payload : contact;
               }
               );
+
+            //   console.log('update contact 2');
            
               return{
                   ...state,

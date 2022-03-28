@@ -10,27 +10,22 @@ function ContactDetail() {
   const [contactDetails,setcContactDetails] = useState(false)
 
   
-  const {findContact,contact,getContact} = useContext(ContactContext)
+  const {findContact,getContact} = useContext(ContactContext)
 
+
+  // console.log(getContact);
   useEffect(() => {
-   
       findContact(contactId)
-      setTimeout(() => {
-        setcContactDetails(getContact)
-        setLoading(false)
-       }, 2000);
-
-  
   },[contactId])
 
-  // useEffect(() => {
-  //   setLoading(false)
-  //  },[contactDetails])
-   
-  //  setTimeout(() => {
-  //   setcContactDetails(getContact)
-  //   setLoading(false)
-  //  }, 2000);
+  useEffect(() => {
+      if(getContact){
+        setcContactDetails(getContact)
+        setLoading(false)
+      }
+  
+  },[getContact])
+
 
   
   return (
