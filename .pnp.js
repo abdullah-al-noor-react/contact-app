@@ -38,6 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@vitejs/plugin-react", "npm:1.2.0"],
+            ["axios", "npm:0.26.1"],
             ["bootstrap", "virtual:7fe5309e35705d4fd28ba32f0d33a386ca4e791a41e83d3de90fa0521070a0fb014d9b3d30d24530d81bb26957a9c46a2a0d544bd546ab8cfb60f8aed7b57014#npm:5.1.3"],
             ["react", "npm:17.0.2"],
             ["react-bootstrap", "virtual:7fe5309e35705d4fd28ba32f0d33a386ca4e791a41e83d3de90fa0521070a0fb014d9b3d30d24530d81bb26957a9c46a2a0d544bd546ab8cfb60f8aed7b57014#npm:2.2.1"],
@@ -799,6 +800,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["axios", [
+        ["npm:0.26.1", {
+          "packageLocation": "./.yarn/cache/axios-npm-0.26.1-a6641ce4e3-139698e390.zip/node_modules/axios/",
+          "packageDependencies": [
+            ["axios", "npm:0.26.1"],
+            ["follow-redirects", "virtual:a6641ce4e3bdcc0997f8f53d9481b67c5d38e21276de8eeee7bf92881685b3ad5600bae416c2af904ceab8132bac649e7efd0af93f18e158e0e65ee05a263d72#npm:1.14.9"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["balanced-match", [
         ["npm:1.0.2", {
           "packageLocation": "./.yarn/cache/balanced-match-npm-1.0.2-a53c126459-690643f300.zip/node_modules/balanced-match/",
@@ -991,6 +1002,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["contact-app", "workspace:."],
             ["@vitejs/plugin-react", "npm:1.2.0"],
+            ["axios", "npm:0.26.1"],
             ["bootstrap", "virtual:7fe5309e35705d4fd28ba32f0d33a386ca4e791a41e83d3de90fa0521070a0fb014d9b3d30d24530d81bb26957a9c46a2a0d544bd546ab8cfb60f8aed7b57014#npm:5.1.3"],
             ["react", "npm:17.0.2"],
             ["react-bootstrap", "virtual:7fe5309e35705d4fd28ba32f0d33a386ca4e791a41e83d3de90fa0521070a0fb014d9b3d30d24530d81bb26957a9c46a2a0d544bd546ab8cfb60f8aed7b57014#npm:2.2.1"],
@@ -1359,6 +1371,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/estree-walker-npm-2.0.2-dfab42f65c-378cc9d3be.zip/node_modules/estree-walker/",
           "packageDependencies": [
             ["estree-walker", "npm:2.0.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["follow-redirects", [
+        ["npm:1.14.9", {
+          "packageLocation": "./.yarn/cache/follow-redirects-npm-1.14.9-522f191631-1b602c548b.zip/node_modules/follow-redirects/",
+          "packageDependencies": [
+            ["follow-redirects", "npm:1.14.9"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:a6641ce4e3bdcc0997f8f53d9481b67c5d38e21276de8eeee7bf92881685b3ad5600bae416c2af904ceab8132bac649e7efd0af93f18e158e0e65ee05a263d72#npm:1.14.9", {
+          "packageLocation": "./.yarn/$$virtual/follow-redirects-virtual-2db68225c5/0/cache/follow-redirects-npm-1.14.9-522f191631-1b602c548b.zip/node_modules/follow-redirects/",
+          "packageDependencies": [
+            ["follow-redirects", "virtual:a6641ce4e3bdcc0997f8f53d9481b67c5d38e21276de8eeee7bf92881685b3ad5600bae416c2af904ceab8132bac649e7efd0af93f18e158e0e65ee05a263d72#npm:1.14.9"],
+            ["debug", null]
+          ],
+          "packagePeers": [
+            "debug"
           ],
           "linkType": "HARD",
         }]
