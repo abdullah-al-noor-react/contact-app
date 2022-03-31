@@ -29,10 +29,14 @@ import EditContact from './Contacts/EditContact';
 import ContactDetail from './Contacts/ContactDetail';
 import AboutPage from './Pages/AboutPage';
 import { ContactProvider } from './Contexts/ContactContext';
+import RegisterUser from './Authentication/RegisterUser';
+import LoginUser from './Authentication/LoginUser';
+import { AuthProvider } from './Contexts/AuthContext';
 function App() {
 
   
   return (
+    <AuthProvider>
     <ContactProvider>
     <BrowserRouter>
        <Header/>
@@ -45,6 +49,8 @@ function App() {
             <Route exact path="/contact/:id/edit" element={<EditContact  />} />
             <Route path="/contact/details/:id" element={<ContactDetail  />} />
             <Route exact path="/about" element={<AboutPage  />} />
+            <Route exact path="/register" element={<RegisterUser  />} />
+            <Route exact path="/login" element={<LoginUser  />} />
             
             
             <Route  path="*" element={<NotFound />} />
@@ -55,6 +61,7 @@ function App() {
        <ToastContainer/>
     </BrowserRouter>
     </ContactProvider>
+    </AuthProvider>
   
   )
 }
