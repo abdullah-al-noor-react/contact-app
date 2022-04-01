@@ -42,9 +42,20 @@ export const AuthProvider = ({children}) => {
         }
         
     },[loaded])
+
+
+    const removeAuthInfo = ()=> {
+        localStorage.removeItem('contact-app-token');
+        setUser(null)
+        
+    }
+
+
+
     const value ={
         saveAuthInfo,
-        user
+        user,
+        removeAuthInfo
     }
     return(
         <AuthContext.Provider value={value}>
