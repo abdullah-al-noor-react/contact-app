@@ -2,7 +2,8 @@ import { useContext, useState } from 'react'
 import {Form,Button} from 'react-bootstrap'
 import axios from 'axios'
 import { AuthContext } from '../Contexts/AuthContext'
-import {useNavigate,useParams} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 function LoginUser() {
 
@@ -35,6 +36,7 @@ function LoginUser() {
                   .post('http://localhost:1337/api/auth/local', formData) 
                   // console.log(res.data);
                   saveAuthInfo(res.data)
+                  toast.success(" log in  successfully...");
                   navigate('/contact')
       } catch (error) {
           // console.log(error);

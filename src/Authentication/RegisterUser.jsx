@@ -3,7 +3,7 @@ import {Form,Button} from 'react-bootstrap'
 import axios from 'axios'
 import { AuthContext } from '../Contexts/AuthContext'
 import {useNavigate,useParams} from 'react-router-dom'
-
+import { toast } from 'react-toastify';
 
 function RegisterUser() {
     let navigate = useNavigate();
@@ -33,6 +33,7 @@ function RegisterUser() {
                     .post('http://localhost:1337/api/auth/local/register', formData) 
                     // console.log(res.data);
                     saveAuthInfo(res.data)
+                    toast.success("Registration is Completed successfully...");
                     navigate('/contact')
         } catch (error) {
             // console.log(error);
